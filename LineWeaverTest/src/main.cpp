@@ -1,6 +1,6 @@
 #include "CurveUtils.hpp"
 
-#include <LineWeaver/Easing/EaseInOutCubic.hpp>
+#include <LineWeaver/Easing/EaseLinear.hpp>
 #include <LineWeaver/Interpolation/BezierInterpolator.hpp>
 #include <LineWeaver/Interpolation/BSplineInterpolator.hpp>
 #include <LineWeaver/Interpolation/CatmullRomInterpolator.hpp>
@@ -42,7 +42,7 @@ int main()
 
 	// Easing
 
-	lw::EaseInOutCubic easing;
+	lw::EaseLinear easing;
 
 	// Sampling
 
