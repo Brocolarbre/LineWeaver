@@ -3,7 +3,7 @@
 namespace lw
 {
 	LinearInterpolator::LinearInterpolator() :
-		Interpolator(2)
+		Interpolator(2, 1)
 	{
 
 	}

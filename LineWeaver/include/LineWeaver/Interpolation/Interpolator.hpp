@@ -14,11 +14,13 @@ namespace lw
 	{
 	protected:
 		unsigned int m_degree;
+		unsigned int m_segmentStep;
 
 	public:
-		Interpolator(unsigned int degree);
+		Interpolator(unsigned int degree, unsigned int segmentStep);
 
 		unsigned int getDegree() const;
+		unsigned int getSegmentStep() const;
 
 		virtual Point operator()(const Curve& points, float t) const = 0;
 	};

@@ -3,7 +3,7 @@
 namespace lw
 {
     CatmullRomInterpolator::CatmullRomInterpolator() :
-        Interpolator(4)
+        Interpolator(4, 1)
     {
 
     }

@@ -3,7 +3,7 @@
 namespace lw
 {
 	BezierInterpolator::BezierInterpolator(unsigned int degree) :
-		Interpolator(degree)
+		Interpolator(degree, degree > 0 ? degree - 1 : 0)
 	{
 
 	}

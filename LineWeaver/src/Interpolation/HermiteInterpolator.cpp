@@ -3,7 +3,7 @@
 namespace lw
 {
     HermiteInterpolator::HermiteInterpolator() :
-        Interpolator(4)
+        Interpolator(4, 1)
     {
 
     }
@@ -23,6 +23,6 @@ namespace lw
         float f3 = -2.0f * t3 + 3.0f * t2;
         float f4 = t3 - t2;
 
-        return f1 * points[0] + f2 * points[1] + f3 * points[3] + f4 * points[2];
+        return f1 * points[0] + f2 * points[1] + f3 * points[2] + f4 * points[3];
 	}
 }
