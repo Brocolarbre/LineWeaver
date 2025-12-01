@@ -1,11 +1,13 @@
 #include "LineWeaver/Interpolation/BSplineInterpolator.hpp"
 
+#include <iostream>
+
 namespace lw
 {
 	BSplineInterpolator::BSplineInterpolator(Interpolator* interpolator) :
-		Interpolator(0, 0),
+		Interpolator(0, 0, false),
 		m_interpolator(interpolator),
-		m_degree(m_interpolator != nullptr ? m_interpolator->getDegree() : 0),
+		m_pointsPerSegment(m_interpolator != nullptr ? m_interpolator->getPointsPerSegment() : 0),
 		m_segmentStep(m_interpolator != nullptr ? m_interpolator->getSegmentStep() : 0)
 	{
 
@@ -13,12 +15,26 @@ namespace lw
 
 	Point BSplineInterpolator::operator()(const Curve& points, float u) const
 	{
-		if (m_interpolator == nullptr || points.size() < m_degree)
+		if (m_interpolator == nullptr || points.size() < m_pointsPerSegment)
 			return Point(0.0f);
 
-		unsigned int maxBaseIndex = static_cast<unsigned int>(points.size() - m_degree);
+		bool useBoundaryPoints = m_interpolator->useBoundaryPoints();
+		unsigned int curveSize = points.size();
+
+		if (useBoundaryPoints)
+			curveSize += 2;
+
+		Curve curvePoints;
+		curvePoints.reserve(curveSize);
+
+		if (useBoundaryPoints)
+			curvePoints.push_back(points.front());
+		curvePoints.insert(curvePoints.end(), points.begin(), points.end());
+		if (useBoundaryPoints)
+			curvePoints.push_back(points.back());
+
+		unsigned int maxBaseIndex = static_cast<unsigned int>(curvePoints.size() - m_pointsPerSegment);
 		unsigned int curveCount = m_segmentStep == 0 ? 0 : maxBaseIndex / m_segmentStep + 1;
-		u = glm::clamp(u, 0.0f, static_cast<float>(curveCount));
 
 		if (curveCount == 0)
 			return Point(0.0f);
@@ -37,9 +53,9 @@ namespace lw
 		if (baseIndex > maxBaseIndex)
 			baseIndex = maxBaseIndex;
 
-		std::vector<Point> interpolatorPoints(m_degree);
-		for (unsigned int i = 0; i < m_degree; ++i)
-			interpolatorPoints[i] = points[static_cast<std::size_t>(baseIndex + i)];
+		std::vector<Point> interpolatorPoints(m_pointsPerSegment);
+		for (unsigned int i = 0; i < m_pointsPerSegment; ++i)
+			interpolatorPoints[i] = curvePoints[static_cast<std::size_t>(baseIndex + i)];
 
 		return (*m_interpolator)(interpolatorPoints, t);
 	}

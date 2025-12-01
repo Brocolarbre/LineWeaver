@@ -13,14 +13,16 @@ namespace lw
 	class LINEWEAVER_API Interpolator
 	{
 	protected:
-		unsigned int m_degree;
+		unsigned int m_pointsPerSegment;
 		unsigned int m_segmentStep;
+		bool m_useBoundaryPoints;
 
 	public:
-		Interpolator(unsigned int degree, unsigned int segmentStep);
+		Interpolator(unsigned int pointsPerSegment, unsigned int segmentStep, bool useBoundaryPoints);
 
-		unsigned int getDegree() const;
+		unsigned int getPointsPerSegment() const;
 		unsigned int getSegmentStep() const;
+		bool useBoundaryPoints() const;
 
 		virtual Point operator()(const Curve& points, float t) const = 0;
 	};

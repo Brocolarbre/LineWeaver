@@ -2,20 +2,25 @@
 
 namespace lw
 {
-	Interpolator::Interpolator(unsigned int degree, unsigned int segmentStep) :
-		m_degree(degree),
-		m_segmentStep(segmentStep)
+	Interpolator::Interpolator(unsigned int pointsPerSegment, unsigned int segmentStep, bool useBoundaryPoints) :
+		m_pointsPerSegment(pointsPerSegment),
+		m_segmentStep(segmentStep),
+		m_useBoundaryPoints(useBoundaryPoints)
 	{
 
 	}
 
-	unsigned int Interpolator::getDegree() const
+	unsigned int Interpolator::getPointsPerSegment() const
 	{
-		return m_degree;
+		return m_pointsPerSegment;
 	}
 
 	unsigned int Interpolator::getSegmentStep() const
 	{
 		return m_segmentStep;
+	}
+	bool Interpolator::useBoundaryPoints() const
+	{
+		return m_useBoundaryPoints;
 	}
 }

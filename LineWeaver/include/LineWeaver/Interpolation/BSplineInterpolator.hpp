@@ -8,7 +8,7 @@ namespace lw
 	{
 	private:
 		Interpolator* m_interpolator;
-		unsigned int m_degree;
+		unsigned int m_pointsPerSegment;
 		unsigned int m_segmentStep;
 
 	public:

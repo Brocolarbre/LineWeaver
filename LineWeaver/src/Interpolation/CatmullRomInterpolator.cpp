@@ -3,14 +3,14 @@
 namespace lw
 {
     CatmullRomInterpolator::CatmullRomInterpolator() :
-        Interpolator(4, 1)
+        Interpolator(4, 1, true)
     {
 
     }
 
     Point CatmullRomInterpolator::operator()(const Curve& points, float t) const
     {
-        if (points.size() < m_degree)
+        if (points.size() < m_pointsPerSegment)
             return Point(0.0f);
 
         t = glm::clamp(t, 0.0f, 1.0f);

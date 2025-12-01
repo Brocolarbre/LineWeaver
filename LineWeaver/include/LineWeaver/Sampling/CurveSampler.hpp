@@ -9,6 +9,6 @@ namespace lw
 	{
 	public:
 		static std::vector<float> generateSampleValues(unsigned int count, float min, float max, const Easing& easing);
-		static Curve sampleCurve(const Curve& curve, const Interpolator& generator, const std::vector<float>& t);
+		static Curve sampleCurve(const Curve& curve, const Interpolator& interpolator, const std::vector<float>& t);
 	};
 }

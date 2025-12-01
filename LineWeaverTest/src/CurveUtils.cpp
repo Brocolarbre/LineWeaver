@@ -2,17 +2,18 @@
 
 #include <fstream>
 #include <iostream>
-#include <sstream>
 
 void CurveUtils::printPoint(const lw::Point& point)
 {
-	std::cout << point.x << ' ' << point.y << ' ' << point.z << std::endl;;
+	std::cout << point.x << ' ' << point.y << ' ' << point.z << '\n';
 }
 
 void CurveUtils::printCurve(const lw::Curve& curve)
 {
 	for (const lw::Point& point : curve)
 		printPoint(point);
+
+	std::cout << std::flush;
 }
 
 lw::Curve CurveUtils::readCurveCsv(const std::string& path)
