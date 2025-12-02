@@ -1,7 +1,5 @@
 #include "LineWeaver/Interpolation/BSplineInterpolator.hpp"
 
-#include <iostream>
-
 namespace lw
 {
 	BSplineInterpolator::BSplineInterpolator(Interpolator* interpolator) :
@@ -15,11 +13,11 @@ namespace lw
 
 	Point BSplineInterpolator::operator()(const Curve& points, float u) const
 	{
-		if (m_interpolator == nullptr || points.size() < m_pointsPerSegment)
+		if (m_interpolator == nullptr || m_segmentStep == 0 || points.size() < m_pointsPerSegment)
 			return Point(0.0f);
 
 		bool useBoundaryPoints = m_interpolator->useBoundaryPoints();
-		unsigned int curveSize = points.size();
+		unsigned int curveSize = static_cast<unsigned int>(points.size());
 
 		if (useBoundaryPoints)
 			curveSize += 2;

@@ -3,7 +3,7 @@
 namespace lw
 {
     HermiteInterpolator::HermiteInterpolator() :
-        Interpolator(4, 1, false)
+        Interpolator(4, 0, false)
     {
 
     }
