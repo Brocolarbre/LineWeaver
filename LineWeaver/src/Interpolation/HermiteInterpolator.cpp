@@ -1,5 +1,7 @@
 #include "LineWeaver/Interpolation/HermiteInterpolator.hpp"
 
+#include <algorithm>
+
 namespace lw
 {
     HermiteInterpolator::HermiteInterpolator() :
@@ -13,7 +15,7 @@ namespace lw
         if (points.size() < m_pointsPerSegment)
             return Point(0.0f);
 
-        t = glm::clamp(t, 0.0f, 1.0f);
+        t = std::clamp(t, 0.0f, 1.0f);
 
         Point t0 = points[1] - points[0];
         Point t1 = points[3] - points[2];

@@ -1,12 +1,10 @@
 #include "LineWeaver/Easing/EaseInOutElastic.hpp"
 
-#include <numbers>
-
 namespace lw
 {
 	float EaseInOutElastic::operator()(float t) const
 	{
-		t = glm::clamp(t, 0.0f, 1.0f);
+		t = std::clamp(t, 0.0f, 1.0f);
 
 		float c5 = (2.0f * std::numbers::pi_v<float>) / 4.5f;
 

@@ -1,16 +1,14 @@
 #pragma once
 
-#include "LineWeaver/Export.hpp"
+#include "Point.hpp"
 
-#include <glm/glm.hpp>
 #include <vector>
 
 namespace lw
 {
-	using Point = glm::vec3;
 	using Curve = std::vector<Point>;
 
-	class LINEWEAVER_API Interpolator
+	class Interpolator
 	{
 	protected:
 		unsigned int m_pointsPerSegment;
@@ -18,11 +16,11 @@ namespace lw
 		bool m_useBoundaryPoints;
 
 	public:
-		Interpolator(unsigned int pointsPerSegment, unsigned int segmentStep, bool useBoundaryPoints);
+		LINEWEAVER_EXPORT Interpolator(unsigned int pointsPerSegment, unsigned int segmentStep, bool useBoundaryPoints);
 
-		unsigned int getPointsPerSegment() const;
-		unsigned int getSegmentStep() const;
-		bool useBoundaryPoints() const;
+		LINEWEAVER_EXPORT unsigned int getPointsPerSegment() const;
+		LINEWEAVER_EXPORT unsigned int getSegmentStep() const;
+		LINEWEAVER_EXPORT bool useBoundaryPoints() const;
 
 		virtual Point operator()(const Curve& points, float t) const = 0;
 	};

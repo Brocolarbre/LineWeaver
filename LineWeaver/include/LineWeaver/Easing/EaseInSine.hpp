@@ -4,9 +4,9 @@
 
 namespace lw
 {
-	class LINEWEAVER_API EaseInSine : public Easing
+	class EaseInSine : public Easing
 	{
 	public:
-		float operator()(float t) const override;
+		LINEWEAVER_EXPORT float operator()(float t) const override;
 	};
 }

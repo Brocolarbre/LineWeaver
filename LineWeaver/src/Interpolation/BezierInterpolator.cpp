@@ -1,5 +1,7 @@
 #include "LineWeaver/Interpolation/BezierInterpolator.hpp"
 
+#include <algorithm>
+
 namespace lw
 {
 	BezierInterpolator::BezierInterpolator(unsigned int pointsPerSegment) :
@@ -13,7 +15,7 @@ namespace lw
 		if (points.size() < m_pointsPerSegment)
 			return Point(0.0f);
 
-		t = glm::clamp(t, 0.0f, 1.0f);
+		t = std::clamp(t, 0.0f, 1.0f);
 
 		std::vector<Point> currentPoints(points.begin(), points.begin() + m_pointsPerSegment);
 

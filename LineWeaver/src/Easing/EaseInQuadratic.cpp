@@ -4,7 +4,7 @@ namespace lw
 {
 	float EaseInQuadratic::operator()(float t) const
 	{
-		t = glm::clamp(t, 0.0f, 1.0f);
+		t = std::clamp(t, 0.0f, 1.0f);
 
 		return t * t;
 	}

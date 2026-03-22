@@ -4,7 +4,7 @@ namespace lw
 {
 	float EaseInOutBack::operator()(float t) const
 	{
-		t = glm::clamp(t, 0.0f, 1.0f);
+		t = std::clamp(t, 0.0f, 1.0f);
 
 		float c1 = 1.70158f;
 		float c2 = c1 * 1.525f;

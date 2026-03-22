@@ -4,7 +4,7 @@
 
 namespace lw
 {
-	class LINEWEAVER_API BSplineInterpolator : public Interpolator
+	class BSplineInterpolator : public Interpolator
 	{
 	private:
 		Interpolator* m_interpolator;
@@ -12,8 +12,8 @@ namespace lw
 		unsigned int m_segmentStep;
 
 	public:
-		BSplineInterpolator(Interpolator* interpolator);
+		LINEWEAVER_EXPORT BSplineInterpolator(Interpolator* interpolator);
 
-		Point operator()(const Curve& points, float u) const override;
+		LINEWEAVER_EXPORT Point operator()(const Curve& points, float u) const override;
 	};
 }

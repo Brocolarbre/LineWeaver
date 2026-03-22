@@ -4,7 +4,7 @@ namespace lw
 {
 	float EaseOutBounce::operator()(float t) const
 	{
-		t = glm::clamp(t, 0.0f, 1.0f);
+		t = std::clamp(t, 0.0f, 1.0f);
 
 		float n1 = 7.5625f;
 		float d1 = 2.75f;

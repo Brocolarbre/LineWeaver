@@ -2,14 +2,14 @@
 
 #ifdef _WIN32
 	#ifdef LINEWEAVER_STATIC
-		#define LINEWEAVER_API
+		#define LINEWEAVER_EXPORT
 	#else
 		#ifdef LINEWEAVER_EXPORT
-			#define LINEWEAVER_API __declspec(dllexport)
+			#define LINEWEAVER_EXPORT __declspec(dllexport)
 		#else
-			#define LINEWEAVER_API __declspec(dllimport)
+			#define LINEWEAVER_EXPORT __declspec(dllimport)
 		#endif
 	#endif
 #elif __linux__
-	#define LINEWEAVER_API
+	#define LINEWEAVER_EXPORT
 #endif

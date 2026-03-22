@@ -1,5 +1,7 @@
 #include "LineWeaver/Interpolation/BSplineInterpolator.hpp"
 
+#include <cmath>
+
 namespace lw
 {
 	BSplineInterpolator::BSplineInterpolator(Interpolator* interpolator) :

@@ -4,11 +4,11 @@
 
 namespace lw
 {
-	class LINEWEAVER_API LinearInterpolator : public Interpolator
+	class LinearInterpolator : public Interpolator
 	{
 	public:
-		LinearInterpolator();
+		LINEWEAVER_EXPORT LinearInterpolator();
 
-		Point operator()(const Curve& points, float t) const override;
+		LINEWEAVER_EXPORT Point operator()(const Curve& points, float t) const override;
 	};
 }

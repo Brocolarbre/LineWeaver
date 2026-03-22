@@ -1,5 +1,7 @@
 #include "LineWeaver/Interpolation/LinearInterpolator.hpp"
 
+#include <algorithm>
+
 namespace lw
 {
 	LinearInterpolator::LinearInterpolator() :
@@ -13,7 +15,7 @@ namespace lw
 		if (points.size() < m_pointsPerSegment)
 			return Point(0.0f);
 
-		t = glm::clamp(t, 0.0f, 1.0f);
+		t = std::clamp(t, 0.0f, 1.0f);
 
 		return (1.0f - t) * points[0] + t * points[1];
 	}

@@ -1,5 +1,7 @@
 #include "LineWeaver/Interpolation/CatmullRomInterpolator.hpp"
 
+#include <algorithm>
+
 namespace lw
 {
     CatmullRomInterpolator::CatmullRomInterpolator() :
@@ -13,7 +15,7 @@ namespace lw
         if (points.size() < m_pointsPerSegment)
             return Point(0.0f);
 
-        t = glm::clamp(t, 0.0f, 1.0f);
+        t = std::clamp(t, 0.0f, 1.0f);
 
         float t2 = t * t;
         float t3 = t2 * t;
