@@ -9,12 +9,13 @@ The library works in **3D** and can be used in **2D** as well by just ignoring *
 
 ### Points and curves
 
-The library uses **glm** for its data representation. This is the only external dependency.
-Two types are defined : **Point** and **Curve**. In reality, these types are just aliases for glm types :
+The data structures are defined as **Point** and **Curve**.
+**Point** has an x, y and z attribute that can be accessed directly.
+**Curve** is a type alias defined as follows:
 ```c++
-using Point = glm::vec3;
 using Curve = std::vector<Point>;
 ```
+
 
 ### Curve interpolators
 
@@ -41,7 +42,7 @@ Below is a list of the degree values of the interpolators. You should make sure 
 If you have **7** points in a curve and are using Hermite or Catmull-Rom interpolators, you have a total of **2** concatenated curves in a B-Spline.
 If you have **5** points in a curve and are using a Linear interpolator, you have a total of **4** concatenated curves in a B-Spline.
 
-Here is an example of the Bezier interpolator :
+Here is an example of the Bezier interpolator:
 ```c++
 #include <LineWeaver/Interpolation/BezierInterpolator.hpp>
 
@@ -52,7 +53,7 @@ float samplingValue = 0.5f;
 lw::Point point = bezierInterpolator(curve, samplingValue);
 ```
 
-Here is an example of the B-Spline interpolator (using Hermite curves) :
+Here is an example of the B-Spline interpolator (using Hermite curves):
 ```c++
 #include <LineWeaver/Interpolation/HermiteInterpolator.hpp>
 #include <LineWeaver/Interpolation/BSplineInterpolator.hpp>
@@ -74,7 +75,7 @@ Their usage consists of instantiating the appropriate class given the desired ea
 Each ease function converts the linear argument and returns its corresponding non-linear value.
 This can be used to sample a curve by putting an emphasis on the begining of the curve, or the end, or both.
 
-Here is an example :
+Here is an example:
 ```c++
 #include <LineWeaver/Easing/EaseInOutCubic.hpp>
 #include <LineWeaver/Interpolation/CatmullRomInterpolator.hpp>
@@ -95,7 +96,7 @@ What if you need to sample a curve a **certain amount of times**, with values ea
 The **CurveSampler** is used for this exact reason. It contains two **static methods**.
 One that can generate a **custom-sized** sequence of sampling values between in a  [**min**, **max**] interval given an easing function, and another that processes a curve by applying a interpolator to a curve with a sequence of sampling values.
 
-Here is an example :
+Here is an example:
 ```c++
 #include <LineWeaver/Easing/EaseInQuadratic.hpp>
 #include <LineWeaver/BezierInterpolator.hpp>
@@ -119,7 +120,7 @@ In practice, this means that the *max* parameter for the *CurveSampler::generate
 Similarly, the *CurveSampler::sampleCurve* method sampling values should only exceed 1 if it is using a B-Spline interpolator.
 
 The value returned by the *EaseCurve* function is the corresponding y value of the interpolated point of the curve.
-This allows for a more intuitive way of defining the curve with a 2D graph : the x axis corresponds to the *t* parameter progression and the y axis corresponds to the function result. The z axis can be ignored.
+This allows for a more intuitive way of defining the curve with a 2D graph: the x axis corresponds to the *t* parameter progression and the y axis corresponds to the function result. The z axis can be ignored.
 
 ## Test application
 
@@ -128,11 +129,11 @@ This allows for a more intuitive way of defining the curve with a 2D graph : the
 ## Setup
 
 The project follows the [Nest](https://github.com/Brocolarbre/Nest/) structure.
-To build the project :
+To build the project:
 - Open a terminal in the **root folder** of the project
-- Run the following command :
-  - Windows : `.\scripts\windows\set_workspace.bat`
-  - Linux : `./scripts/linux/setup_workspace.sh`
+- Run the following command:
+  - Windows: `.\scripts\windows\set_workspace.bat`
+  - Linux: `./scripts/linux/setup_workspace.sh`
 - Open the project workspace
 - Build the project
 
@@ -145,5 +146,4 @@ The dependencies are listed below, the library is guaranteed to work with the sp
 
 ### External dependencies
 
-**LineWeaver** has the following external dependencies :
-- glm (1.0.1)
+**LineWeaver** has no external dependencies.
