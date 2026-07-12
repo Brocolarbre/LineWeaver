@@ -147,3 +147,4 @@ The dependencies are listed below, the library is guaranteed to work with the sp
 ### External dependencies
 
 **LineWeaver** has no external dependencies.
+The minimum required C++ version is C++17.
