@@ -4,7 +4,7 @@
 
 namespace lw
 {
-	class EaseOutExponential : public Easing
+	class EaseOutExponential : public CloneableEasing<EaseOutExponential>
 	{
 	public:
 		LINEWEAVER_EXPORT float operator()(float t) const override;

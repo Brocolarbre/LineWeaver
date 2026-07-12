@@ -1,4 +1,5 @@
 #include "LineWeaver/Easing/EaseInElastic.hpp"
+#include "LineWeaver/Detail/Constants.hpp"
 
 namespace lw
 {
@@ -6,7 +7,7 @@ namespace lw
 	{
 		t = std::clamp(t, 0.0f, 1.0f);
 
-		float c4 = (2.0f * std::numbers::pi_v<float>) / 3.0f;
+		float c4 = (lw::math::two_pi) / 3.0f;
 
 		if (t == 0.0f || t == 1.0f)
 			return t;

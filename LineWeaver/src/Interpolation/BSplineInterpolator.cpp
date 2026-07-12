@@ -5,7 +5,7 @@
 namespace lw
 {
 	BSplineInterpolator::BSplineInterpolator(Interpolator* interpolator) :
-		Interpolator(0, 0, false),
+		CloneableInterpolator(0, 0, false),
 		m_interpolator(interpolator),
 		m_pointsPerSegment(m_interpolator != nullptr ? m_interpolator->getPointsPerSegment() : 0),
 		m_segmentStep(m_interpolator != nullptr ? m_interpolator->getSegmentStep() : 0)

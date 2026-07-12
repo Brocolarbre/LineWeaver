@@ -5,7 +5,7 @@
 
 namespace lw
 {
-	class EaseCurve : public Easing
+	class EaseCurve : public CloneableEasing<EaseCurve>
 	{
 	private:
 		const Interpolator& m_interpolator;

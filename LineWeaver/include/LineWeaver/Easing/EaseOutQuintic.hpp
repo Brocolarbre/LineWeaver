@@ -4,7 +4,7 @@
 
 namespace lw
 {
-	class EaseOutQuintic : public Easing
+	class EaseOutQuintic : public CloneableEasing<EaseOutQuintic>
 	{
 	public:
 		LINEWEAVER_EXPORT float operator()(float t) const override;

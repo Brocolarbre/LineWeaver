@@ -4,7 +4,7 @@
 
 namespace lw
 {
-	class EaseInSine : public Easing
+	class EaseInSine : public CloneableEasing<EaseInSine>
 	{
 	public:
 		LINEWEAVER_EXPORT float operator()(float t) const override;

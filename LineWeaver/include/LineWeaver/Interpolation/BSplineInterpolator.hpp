@@ -4,7 +4,7 @@
 
 namespace lw
 {
-	class BSplineInterpolator : public Interpolator
+	class BSplineInterpolator : public CloneableInterpolator<BSplineInterpolator>
 	{
 	private:
 		Interpolator* m_interpolator;

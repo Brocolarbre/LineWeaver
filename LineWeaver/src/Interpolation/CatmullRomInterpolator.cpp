@@ -5,7 +5,7 @@
 namespace lw
 {
     CatmullRomInterpolator::CatmullRomInterpolator() :
-        Interpolator(4, 1, true)
+        CloneableInterpolator(4, 1, true)
     {
 
     }

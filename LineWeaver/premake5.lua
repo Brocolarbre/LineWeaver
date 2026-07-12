@@ -1,6 +1,6 @@
 project "LineWeaver"
 	language "C++"
-	cppdialect "C++20"
+	cppdialect "C++17"
 
 	targetdir (outputdir .. "/%{prj.name}")
 	objdir (outputdir .. "/%{prj.name}/intermediates")

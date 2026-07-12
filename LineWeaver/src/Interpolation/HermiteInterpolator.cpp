@@ -5,7 +5,7 @@
 namespace lw
 {
     HermiteInterpolator::HermiteInterpolator() :
-        Interpolator(4, 0, false)
+        CloneableInterpolator(4, 0, false)
     {
 
     }

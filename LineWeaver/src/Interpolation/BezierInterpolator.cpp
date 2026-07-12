@@ -5,7 +5,7 @@
 namespace lw
 {
 	BezierInterpolator::BezierInterpolator(unsigned int pointsPerSegment) :
-		Interpolator(pointsPerSegment, pointsPerSegment > 0 ? pointsPerSegment - 1 : 0, false)
+		CloneableInterpolator(pointsPerSegment, pointsPerSegment > 0 ? pointsPerSegment - 1 : 0, false)
 	{
 
 	}

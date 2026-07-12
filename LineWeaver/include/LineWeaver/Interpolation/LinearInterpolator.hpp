@@ -4,7 +4,7 @@
 
 namespace lw
 {
-	class LinearInterpolator : public Interpolator
+	class LinearInterpolator : public CloneableInterpolator<LinearInterpolator>
 	{
 	public:
 		LINEWEAVER_EXPORT LinearInterpolator();

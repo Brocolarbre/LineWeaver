@@ -5,7 +5,7 @@
 namespace lw
 {
 	LinearInterpolator::LinearInterpolator() :
-		Interpolator(2, 1, false)
+		CloneableInterpolator(2, 1, false)
 	{
 
 	}

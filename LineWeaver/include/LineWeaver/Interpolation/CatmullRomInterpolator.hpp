@@ -4,7 +4,7 @@
 
 namespace lw
 {
-	class CatmullRomInterpolator : public Interpolator
+	class CatmullRomInterpolator : public CloneableInterpolator<CatmullRomInterpolator>
 	{
 	public:
 		LINEWEAVER_EXPORT CatmullRomInterpolator();

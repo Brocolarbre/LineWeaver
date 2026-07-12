@@ -4,7 +4,7 @@
 
 namespace lw
 {
-	class BezierInterpolator: public Interpolator
+	class BezierInterpolator: public CloneableInterpolator<BezierInterpolator>
 	{
 	public:
 		LINEWEAVER_EXPORT BezierInterpolator(unsigned int pointsPerSegment = 3);

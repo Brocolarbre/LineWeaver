@@ -4,7 +4,7 @@
 
 namespace lw
 {
-	class HermiteInterpolator : public Interpolator
+	class HermiteInterpolator : public CloneableInterpolator<HermiteInterpolator>
 	{
 	public:
 		LINEWEAVER_EXPORT HermiteInterpolator();
