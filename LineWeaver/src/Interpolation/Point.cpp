@@ -26,6 +26,16 @@ namespace lw
 
 	}
 
+	const float& Point::operator[](size_t index) const
+	{
+		switch (index)
+		{
+		case 0: return x;
+		case 1: return y;
+		default: return z;
+		}
+	}
+
 	float& Point::operator[](size_t index)
 	{
 		switch (index)
@@ -36,17 +46,17 @@ namespace lw
 		}
 	}
 
-	Point Point::operator+(const Point& point)
+	Point Point::operator+(const Point& point) const
 	{
 		return Point(x + point.x, y + point.y, z + point.z);
 	}
 
-	 Point Point::operator-(const Point& point)
+	 Point Point::operator-(const Point& point) const
 	 {
 	 	 return Point(x - point.x, y - point.y, z - point.z);
 	 }
 
-	 Point Point::operator*(float value)
+	 Point Point::operator*(float value) const
 	 {
 		 return Point(x * value, y * value, z * value);
 	 }

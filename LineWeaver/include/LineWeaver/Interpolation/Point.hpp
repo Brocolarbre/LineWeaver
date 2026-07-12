@@ -16,13 +16,13 @@ namespace lw
 
 		LINEWEAVER_EXPORT Point& operator=(const Point& point) = default;
 
+		LINEWEAVER_EXPORT const float& operator[](size_t index) const;
 		LINEWEAVER_EXPORT float& operator[](size_t index);
 
-		LINEWEAVER_EXPORT Point operator+(const Point& point);
-		LINEWEAVER_EXPORT Point operator-(const Point& point);
-		LINEWEAVER_EXPORT Point operator*(float value);
+		LINEWEAVER_EXPORT Point operator+(const Point& point) const;
+		LINEWEAVER_EXPORT Point operator-(const Point& point) const;
+		LINEWEAVER_EXPORT Point operator*(float value) const;
 	};
 
-	Point operator*(float value, const Point& point);
-	Point operator-(const Point& a, const Point& b);
+	LINEWEAVER_EXPORT Point operator*(float value, const Point& point);
 }

@@ -17,6 +17,6 @@ namespace lw
 
 		t = std::clamp(t, 0.0f, 1.0f);
 
-		return (1.0f - t) * points[0] + t * points[1];
+		return points[0] + (points[1] - points[0]) * t;
 	}
 }
