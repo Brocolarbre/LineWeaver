@@ -4,11 +4,20 @@
 
 namespace lw
 {
-	BSplineInterpolator::BSplineInterpolator(Interpolator* interpolator) :
+	BSplineInterpolator::BSplineInterpolator(std::unique_ptr<Interpolator> interpolator) :
 		CloneableInterpolator(0, 0, false),
-		m_interpolator(interpolator),
+		m_interpolator(std::move(interpolator)),
 		m_pointsPerSegment(m_interpolator != nullptr ? m_interpolator->getPointsPerSegment() : 0),
 		m_segmentStep(m_interpolator != nullptr ? m_interpolator->getSegmentStep() : 0)
+	{
+
+	}
+
+	BSplineInterpolator::BSplineInterpolator(const BSplineInterpolator& bSplineInterpolator) :
+		CloneableInterpolator(0, 0, false),
+		m_interpolator(bSplineInterpolator.m_interpolator->clone()),
+		m_pointsPerSegment(bSplineInterpolator.m_pointsPerSegment),
+		m_segmentStep(bSplineInterpolator.m_segmentStep)
 	{
 
 	}

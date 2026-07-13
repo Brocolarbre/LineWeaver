@@ -40,10 +40,10 @@ int main()
 	lw::BezierInterpolator bezierInterpolator(4);
 	lw::HermiteInterpolator hermiteInterpolator;
 	lw::CatmullRomInterpolator catmullRomInterpolator;
-	lw::BSplineInterpolator linearBSplineInterpolator(&linearInterpolator);
-	lw::BSplineInterpolator bezierBSplineInterpolator(&bezierInterpolator);
-	lw::BSplineInterpolator hermiteBSplineInterpolator(&hermiteInterpolator);
-	lw::BSplineInterpolator catmullRomBSplineInterpolator(&catmullRomInterpolator);
+	lw::BSplineInterpolator linearBSplineInterpolator(std::make_unique<lw::LinearInterpolator>());
+	lw::BSplineInterpolator bezierBSplineInterpolator(std::make_unique<lw::BezierInterpolator>(4));
+	lw::BSplineInterpolator hermiteBSplineInterpolator(std::make_unique<lw::HermiteInterpolator>());
+	lw::BSplineInterpolator catmullRomBSplineInterpolator(std::make_unique<lw::CatmullRomInterpolator>());
 
 	// Curves
 
