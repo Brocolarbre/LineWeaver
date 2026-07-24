@@ -4,9 +4,9 @@
 
 namespace lw
 {
-	class EaseOutCubic : public CloneableEasing<EaseOutCubic>
+	class LINEWEAVER_API EaseOutCubic : public CloneableEasing<EaseOutCubic>
 	{
 	public:
-		LINEWEAVER_EXPORT float operator()(float t) const override;
+		float operator()(float t) const override;
 	};
 }

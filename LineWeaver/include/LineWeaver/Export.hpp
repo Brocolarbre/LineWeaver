@@ -1,15 +1,13 @@
 #pragma once
 
-#ifdef _WIN32
-	#ifdef LINEWEAVER_STATIC
-		#define LINEWEAVER_EXPORT
+#if defined(_WIN32)
+	#if defined(LINEWEAVER_STATIC)
+		#define LINEWEAVER_API
+	#elif defined(LINEWEAVER_BUILD)
+		#define LINEWEAVER_API __declspec(dllexport)
 	#else
-		#ifdef LINEWEAVER_EXPORT
-			#define LINEWEAVER_EXPORT __declspec(dllexport)
-		#else
-			#define LINEWEAVER_EXPORT __declspec(dllimport)
-		#endif
+		#define LINEWEAVER_API __declspec(dllimport)
 	#endif
-#elif __linux__
-	#define LINEWEAVER_EXPORT
+#else
+	#define LINEWEAVER_API __attribute__((visibility("default")))
 #endif

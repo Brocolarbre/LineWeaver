@@ -4,11 +4,11 @@
 
 namespace lw
 {
-	class BezierInterpolator: public CloneableInterpolator<BezierInterpolator>
+	class LINEWEAVER_API BezierInterpolator: public CloneableInterpolator<BezierInterpolator>
 	{
 	public:
-		LINEWEAVER_EXPORT BezierInterpolator(unsigned int pointsPerSegment = 3);
+		BezierInterpolator(unsigned int pointsPerSegment = 3);
 
-		LINEWEAVER_EXPORT Point operator()(const Curve& points, float t) const override;
+		Point operator()(const Curve& points, float t) const override;
 	};
 }

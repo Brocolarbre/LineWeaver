@@ -4,11 +4,11 @@
 
 namespace lw
 {
-	class HermiteInterpolator : public CloneableInterpolator<HermiteInterpolator>
+	class LINEWEAVER_API HermiteInterpolator : public CloneableInterpolator<HermiteInterpolator>
 	{
 	public:
-		LINEWEAVER_EXPORT HermiteInterpolator();
+		HermiteInterpolator();
 
-		LINEWEAVER_EXPORT Point operator()(const Curve& points, float t) const override;
+		Point operator()(const Curve& points, float t) const override;
 	};
 }

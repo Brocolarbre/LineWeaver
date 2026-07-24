@@ -4,11 +4,11 @@
 
 namespace lw
 {
-	class CatmullRomInterpolator : public CloneableInterpolator<CatmullRomInterpolator>
+	class LINEWEAVER_API CatmullRomInterpolator : public CloneableInterpolator<CatmullRomInterpolator>
 	{
 	public:
-		LINEWEAVER_EXPORT CatmullRomInterpolator();
+		CatmullRomInterpolator();
 
-		LINEWEAVER_EXPORT Point operator()(const Curve& points, float t) const override;
+		Point operator()(const Curve& points, float t) const override;
 	};
 }

@@ -4,7 +4,7 @@
 
 namespace lw
 {
-	class BSplineInterpolator : public CloneableInterpolator<BSplineInterpolator>
+	class LINEWEAVER_API BSplineInterpolator : public CloneableInterpolator<BSplineInterpolator>
 	{
 	private:
 		std::unique_ptr<Interpolator> m_interpolator;
@@ -12,9 +12,9 @@ namespace lw
 		unsigned int m_segmentStep;
 
 	public:
-		LINEWEAVER_EXPORT BSplineInterpolator(std::unique_ptr<Interpolator> interpolator);
-		LINEWEAVER_EXPORT BSplineInterpolator(const BSplineInterpolator& bSplineInterpolator);
+		BSplineInterpolator(std::unique_ptr<Interpolator> interpolator);
+		BSplineInterpolator(const BSplineInterpolator& bSplineInterpolator);
 
-		LINEWEAVER_EXPORT Point operator()(const Curve& points, float u) const override;
+		Point operator()(const Curve& points, float u) const override;
 	};
 }

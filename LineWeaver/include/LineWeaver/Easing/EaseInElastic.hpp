@@ -4,9 +4,9 @@
 
 namespace lw
 {
-	class EaseInElastic : public CloneableEasing<EaseInElastic>
+	class LINEWEAVER_API EaseInElastic : public CloneableEasing<EaseInElastic>
 	{
 	public:
-		LINEWEAVER_EXPORT float operator()(float t) const override;
+		float operator()(float t) const override;
 	};
 }

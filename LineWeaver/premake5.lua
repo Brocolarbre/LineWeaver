@@ -15,7 +15,11 @@ project "LineWeaver"
 		filter "options:shared-library"
 		
 		defines {
-			"LINEWEAVER_EXPORT"
+			"LINEWEAVER_BUILD"
+		}
+		
+		disablewarnings {
+			"4251"
 		}
 		
 	filter "not options:shared-library"

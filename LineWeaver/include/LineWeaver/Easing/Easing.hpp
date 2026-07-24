@@ -8,10 +8,10 @@
 
 namespace lw
 {
-	class Easing
+	class LINEWEAVER_API Easing
 	{
 	public:
-		LINEWEAVER_EXPORT virtual ~Easing() = default;
+		virtual ~Easing() = default;
 
 		virtual std::unique_ptr<Easing> clone() const = 0;
 		virtual float operator()(float t) const = 0;

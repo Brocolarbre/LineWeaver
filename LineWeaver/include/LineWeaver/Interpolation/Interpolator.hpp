@@ -9,7 +9,7 @@ namespace lw
 {
 	using Curve = std::vector<Point>;
 
-	class Interpolator
+	class LINEWEAVER_API Interpolator
 	{
 	protected:
 		unsigned int m_pointsPerSegment;
@@ -17,12 +17,12 @@ namespace lw
 		bool m_useBoundaryPoints;
 
 	public:
-		LINEWEAVER_EXPORT Interpolator(unsigned int pointsPerSegment, unsigned int segmentStep, bool useBoundaryPoints);
-		LINEWEAVER_EXPORT virtual ~Interpolator() = default;
+		Interpolator(unsigned int pointsPerSegment, unsigned int segmentStep, bool useBoundaryPoints);
+		virtual ~Interpolator() = default;
 
-		LINEWEAVER_EXPORT unsigned int getPointsPerSegment() const;
-		LINEWEAVER_EXPORT unsigned int getSegmentStep() const;
-		LINEWEAVER_EXPORT bool useBoundaryPoints() const;
+		unsigned int getPointsPerSegment() const;
+		unsigned int getSegmentStep() const;
+		bool useBoundaryPoints() const;
 
 		virtual std::unique_ptr<Interpolator> clone() const = 0;
 		virtual Point operator()(const Curve& points, float t) const = 0;
