@@ -140,7 +140,7 @@ To build the project:
 ### Static and dynamic linkage
 
 Any project that uses the the static version of the library shoud define the `LINEWEAVER_STATIC` macro.
-To manually export the library as a shared library, the project should define the `LINEWEAVER_EXPORT` macro.
+To manually export the library as a shared library, the project should define the `LINEWEAVER_BUILD` macro.
 Using the library as a static library requires to link the external dependencies of the library (as only a dynamic library or an executable can store static dependencies).
 The dependencies are listed below, the library is guaranteed to work with the specified library versions. Replacing a library with another version may or may not work.
 
