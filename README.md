@@ -124,7 +124,7 @@ This allows for a more intuitive way of defining the curve with a 2D graph: the 
 
 ## Test application
 
-**LineWeaverTest** is a test application that you can use to try the library with ease. It implements a few **use cases** as well as utility functions to **read** and **write** **.csv** curves and **print** points and curves in the console.
+**LineWeaverTest** is a test application that can be used to try the library with ease. It implements a few **use cases** as well as utility functions to **read** and **write** **.csv** curves and **print** points and curves in the console.
 
 ## Setup
 
