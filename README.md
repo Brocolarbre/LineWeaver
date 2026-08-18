@@ -131,9 +131,9 @@ This allows for a more intuitive way of defining the curve with a 2D graph: the 
 The project follows the [Nest](https://github.com/Brocolarbre/Nest/) structure.
 To build the project:
 - Open a terminal in the **root folder** of the project
-- Run the following command:
-  - Windows : `.\scripts\windows\set_environment.bat` and `.\scripts\windows\set_workspace.bat`
-  - Linux : `./scripts/linux/set_environment.sh` and `./scripts/linux/set_workspace.sh`
+- Run the following command :
+  - Windows : `.\scripts\windows\set_environment.bat`
+  - Linux : `./scripts/linux/set_environment.sh`
 - Open the project workspace
 - Build the project
 
